@@ -37,13 +37,19 @@ body {
     nav button {
       background-color: #979399;
       color: white;
-      border: none;
-      padding: 10px 20px;
+      border: 0;
+      padding: 12px 20px;
       cursor: pointer;
       font-size: 16px;
+      transition: all .1s linear;
+      box-shadow: 0 5px 0 #006599;
+      cursor: pointer;
+      font: inherit;
+      margin: 0;
+      outline: 0;
         
      /* see https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius*/
-      border-radius: 5px;
+      border-radius: 4px;
     }
 
 /* navigation button hover style */
@@ -54,6 +60,8 @@ body {
 /* active page button */
     nav button.active {
       background-color: #9AE8ED;
+      box-shadow: 0 2px 0 #006599;
+      transform: translateY(3px);
     }
 
 div {
@@ -69,3 +77,41 @@ div {
     .page.active {
       display: block;
     }
+
+    .original,
+    .box {
+  border-radius: 6px;
+}
+
+.original {
+  background: #eaeaed;
+  border: 1px dashed #cecfd5;
+  float:left;
+  margin: 12px 15px;
+}
+
+.spin {
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+
+.spin:hover {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+footer {
+  background: #2db34a;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+}
